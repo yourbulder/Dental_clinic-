@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Naturopathy & Dental Braces Clinic- Naturopathy & Dental Braces Clinic - Natural healing & advanced dental braces treatment in Dwarka with expert dentists, advanced technology, and a patient-first approach.">
+    <title>Naturopathy & Dental Braces Clinic| Your Smile, Our Priority</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Playfair+Display:wght@600&amp;display=swap');
+        
+        :root {
+            --tw-color-primary: #0284c8;
+        }
+        
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        .tailwind-ready * {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #0284c8;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(92deg, #0284c8 0%, #0ea5e9 100%);
+        }
+        
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 64px;
+            height: 3px;
+            background-color: #0284c8;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 9999px;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 25px 25px 50px -12px rgb(2 132 200 / 0.15);
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="tailwind-ready bg-white text-slate-800 smooth-scroll">
+    <!-- NAVBAR -->
+    <nav class="bg-white border-b border-slate-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto">
+            <div class="px-6 py-5 flex items-center justify-between">
+                
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-10 h-10 bg-[#0284c8] text-white rounded-2xl flex items-center justify-center text-3xl shadow-inner">
+                        🦷
+                    </div>
+                    <div>
+                        <h1 class="heading-font text-2xl font-semibold tracking-tight text-slate-900">Naturopathy & Dental Braces Clinic</h1>
+                        <p class="text-[10px] text-slate-400 -mt-1 tracking-[1px]">DENTAL CLINIC</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#home" onclick="navigateToSection('home')" class="nav-link text-slate-700 hover:text-[#0284c8]">Home</a>
+                    <a href="#about" onclick="navigateToSection('about')" class="nav-link text-slate-700 hover:text-[#0284c8]">About</a>
+                    <a href="#services" onclick="navigateToSection('services')" class="nav-link text-slate-700 hover:text-[#0284c8]">Services</a>
+                    <a href="#contact" onclick="navigateToSection('contact')" class="nav-link text-slate-700 hover:text-[#0284c8]">Contact</a>
+                </div>
+
+                <!-- Right side actions -->
+                <div class="flex items-center gap-x-4">
+                    <a href="tel:+919876543210" class="hidden sm:flex items-center gap-x-2 text-slate-600 hover:text-[#0284c8] text-sm font-medium">
+                        <span class="text-xl">📞</span>
+                        <span></span>
+                    </a>
+                    
+                    <!-- Book Appointment Button -->
+                    <button onclick="navigateToSection('contact')" 
+                            class="flex items-center gap-x-2 bg-[#0284c8] hover:bg-[#0369a1] text-white px-6 py-3 rounded-3xl text-sm font-semibold shadow-lg shadow-blue-500/30">
+                        <span>Book Appointment</span>
+                        <span class="text-lg">→</span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 flex items-center justify-center text-2xl text-slate-700">
+                        <span id="mobile-menu-icon">☰</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 border-t bg-white">
+                <div class="flex flex-col gap-y-4 pt-4 text-sm font-medium">
+                    <a href="#home" onclick="navigateToSection('home');toggleMobileMenu()" class="py-2 px-4 hover:bg-slate-100 rounded-2xl">Home</a>
+                    <a href="#about" onclick="navigateToSection('about');toggleMobileMenu()" class="py-2 px-4 hover:bg-slate-100 rounded-2xl">About Us</a>
+                    <a href="#services" onclick="navigateToSection('services');toggleMobileMenu()" class="py-2 px-4 hover:bg-slate-100 rounded-2xl">Services</a>
+                    <a href="#contact" onclick="navigateToSection('contact');toggleMobileMenu()" class="py-2 px-4 hover:bg-slate-100 rounded-2xl">Contact</a>
+                    <div class="pt-4 border-t">
+                        <button onclick="navigateToSection('contact');toggleMobileMenu()" 
+                                class="w-full bg-[#0284c8] text-white py-4 rounded-3xl font-semibold">Book Appointment Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <section id="home" class="min-h-screen">
+        <!-- Hero -->
+        <div class="hero-bg text-white pt-16 md:pt-0">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center min-h-[calc(100vh-80px)]">
+                
+                <!-- Left content -->
+                <div class="flex flex-col justify-center py-12 md:py-0">
+                    <div class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-3xl mb-6 w-fit">
+                        <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                        NOW OPEN IN DELHI • 7 DAYS A WEEK
+                    </div>
+                    
+                    <h1 class="heading-font text-5xl md:text-6xl leading-none font-semibold tracking-tighter mb-6">
+                        Your smile.<br>Our passion.
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl text-white/90 max-w-md mb-10">
+                        Modern, compassionate dental care in the heart of Delhi. 
+                        Advanced technology. Gentle hands. Beautiful results.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="navigateToSection('contact')" 
+                                class="bg-white text-[#0284c8] hover:bg-amber-50 px-8 py-5 rounded-3xl text-lg font-semibold flex items-center gap-x-3 shadow-xl">
+                            Book Appointment
+                            <span class="text-2xl">🦷</span>
+                        </button>
+                        
+                        <button onclick="navigateToSection('services')" 
+                                class="border-2 border-white hover:bg-white/10 px-8 py-5 rounded-3xl text-lg font-semibold flex items-center">
+                            Explore Services
+                        </button>
+                    </div>
+                    
+                    <div class="mt-12 flex items-center gap-x-8 text-sm">
+                        <div class="flex -space-x-4">
+                            <div class="w-8 h-8 bg-white/30 backdrop-blur rounded-2xl flex items-center justify-center text-lg">⭐️</div>
+                            <div class="w-8 h-8 bg-white/30 backdrop-blur rounded-2xl flex items-center justify-center text-lg">⭐️</div>
+                            <div class="w-8 h-8 bg-white/30 backdrop-blur rounded-2xl flex items-center justify-center text-lg">⭐️</div>
+                        </div>
+                        <div>
+                            <p class="font-semibold">4.98/5 average rating</p>
+                            <p class="text-white/70 text-xs">from 487+ happy patients</p>
+                        </div>
+                        <div class="h-10 w-px bg-white/30"></div>
+                        <div class="text-xs leading-tight">
+                            ISO 9001:2015 CERTIFIED<br>
+                            <span class="font-medium">Advanced sterilization • Pain-free procedures</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right visual -->
+                <div class="relative hidden md:flex justify-end">
+                    <div class="w-[520px] h-[520px] bg-white/10 backdrop-blur-3xl rounded-[4rem] border border-white/30 flex items-center justify-center shadow-2xl relative overflow-hidden">
+                        <!-- Fake dental image placeholder with modern styling -->
+                        <div class="text-center">
+                            <div class="text-[180px] leading-none mb-4 drop-shadow-xl">😁</div>
+                            <div class="bg-white text-[#0284c8] text-2xl font-semibold px-8 py-3 rounded-3xl inline-flex items-center gap-x-3 shadow-inner">
+                                <span>Confident smiles start here</span>
+                                <div class="w-6 h-6 bg-[#0284c8] text-white rounded-2xl flex items-center justify-center text-xl">🦷</div>
+                            </div>
+                            <div class="absolute -top-6 -right-6 bg-white text-slate-900 text-xs font-medium px-6 py-2 rounded-3xl shadow-xl flex items-center gap-x-2">
+                                <span class="text-emerald-500">●</span>
+                                OPEN TODAY TILL 8 PM
+                            </div>
+                            <div class="absolute bottom-12 -left-6 bg-white/90 text-slate-900 text-sm px-5 py-3 rounded-3xl flex items-center shadow-2xl">
+                                <span class="font-medium">Dr. Priya Sharma</span>
+                                <span class="mx-3 text-slate-300">•</span>
+                                <span class="text-emerald-500 font-medium">In clinic now</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust bar -->
+        <div class="bg-white py-6 border-b">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 text-slate-400 text-sm font-medium opacity-75">
+                    <div class="flex items-center gap-x-2">✓ Advanced 3D CBCT Imaging</div>
+                    <div class="flex items-center gap-x-2">✓ Painless Invisalign®</div>
+                    <div class="flex items-center gap-x-2">✓ Same-day CEREC Crowns</div>
+                    <div class="flex items-center gap-x-2">✓ Laser Dentistry</div>
+                    <div class="flex items-center gap-x-2">✓ 5-star Google Reviews</div>
+                    <div class="flex items-center gap-x-2">✓ 24/7 Emergency Care</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick services preview -->
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="flex justify-between items-baseline mb-10">
+                <h2 class="text-3xl font-semibold text-slate-900">Popular Services</h2>
+                <a onclick="navigateToSection('services')" class="text-[#0284c8] font-medium flex items-center hover:gap-x-2">
+                    See all services 
+                    <span class="text-xl">→</span>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Service card 1 -->
+                <div onclick="navigateToSection('services')" class="card-hover bg-white border border-slate-100 rounded-3xl p-7 cursor-pointer">
+                    <div class="text-4xl mb-4">🦷</div>
+                    <h3 class="font-semibold text-xl mb-2">Teeth Cleaning &amp; Polishing</h3>
+                    <p class="text-slate-600 text-sm">Deep cleaning that removes plaque and leaves your teeth sparkling. 45 minutes.</p>
+                    <div class="text-[#0284c8] text-xs font-semibold mt-6 flex justify-between items-center">
+                        <span>STARTING ₹1,999</span>
+                        <span class="text-lg">→</span>
+                    </div>
+                </div>
+                
+                <!-- Service card 2 -->
+                <div onclick="navigateToSection('services')" class="card-hover bg-white border border-slate-100 rounded-3xl p-7 cursor-pointer">
+                    <div class="text-4xl mb-4">✨</div>
+                    <h3 class="font-semibold text-xl mb-2">Hollywood Smile Makeover</h3>
+                    <p class="text-slate-600 text-sm">Veneers, whitening &amp; alignment in one complete transformation.</p>
+                    <div class="text-[#0284c8] text-xs font-semibold mt-6 flex justify-between items-center">
+                        <span>STARTING ₹45,000</span>
+                        <span class="text-lg">→</span>
+                    </div>
+                </div>
+                
+                <!-- Service card 3 -->
+                <div onclick="navigateToSection('services')" class="card-hover bg-white border border-slate-100 rounded-3xl p-7 cursor-pointer">
+                    <div class="text-4xl mb-4">🔄</div>
+                    <h3 class="font-semibold text-xl mb-2">Invisalign Clear Aligners</h3>
+                    <p class="text-slate-600 text-sm">Straighten teeth discreetly. No braces. Visible results in weeks.</p>
+                    <div class="text-[#0284c8] text-xs font-semibold mt-6 flex justify-between items-center">
+                        <span>STARTING ₹1,20,000</span>
+                        <span class="text-lg">→</span>
+                    </div>
+                </div>
+                
+                <!-- Service card 4 -->
+                <div onclick="navigateToSection('services')" class="card-hover bg-white border border-slate-100 rounded-3xl p-7 cursor-pointer">
+                    <div class="text-4xl mb-4">🦷</div>
+                    <h3 class="font-semibold text-xl mb-2">Dental Implants</h3>
+                    <p class="text-slate-600 text-sm">Permanent replacement for missing teeth. Natural look &amp; feel.</p>
+                    <div class="text-[#0284c8] text-xs font-semibold mt-6 flex justify-between items-center">
+                        <span>STARTING ₹35,000</span>
+                        <span class="text-lg">→</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT PAGE -->
+    <section id="about" class="max-w-7xl mx-auto px-6 py-20 bg-slate-50">
+        <div class="grid md:grid-cols-12 gap-16">
+            
+            <!-- Left text -->
+            <div class="md:col-span-7">
+                <span class="uppercase text-[#0284c8] font-semibold tracking-widest text-sm">EST. 2018 • NEW DELHI</span>
+                <h1 class="heading-font text-5xl font-semibold leading-none mt-3 mb-8">Where modern dentistry meets genuine care</h1>
+                
+                <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                    Naturopathy & Dental Braces Clinic was founded with a simple mission: to make world-class dental care accessible, comfortable, and affordable for every family in Delhi.
+                </p>
+                
+                <p class="text-slate-600 mb-12">
+                    Today, our 4,200 sq.ft. state-of-the-art clinic in Green Park features the latest dental technology from Europe and the USA. From digital smile design to same-day restorations, we combine cutting-edge science with compassionate service.
+                </p>
+                
+                <div class="grid grid-cols-3 gap-6">
+                    <div>
+                        <div class="text-4xl font-semibold text-[#0284c8]">15k+</div>
+                        <div class="text-sm text-slate-500">Smiles transformed</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-semibold text-[#0284c8]">28</div>
+                        <div class="text-sm text-slate-500">Expert team members</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-semibold text-[#0284c8]">4.98</div>
+                        <div class="text-sm text-slate-500">Google rating</div>
+                    </div>
+                </div>
+                
+                <button onclick="navigateToSection('contact')" 
+                        class="mt-10 bg-[#0284c8] text-white px-8 py-4 rounded-3xl flex items-center text-lg font-medium">
+                    Meet our team &amp; book your visit
+                    <span class="ml-4 text-2xl">→</span>
+                </button>
+            </div>
+            
+            <!-- Right stats + team preview -->
+            <div class="md:col-span-5 space-y-8">
+                <div class="bg-white rounded-3xl p-8 shadow">
+                    <h3 class="font-semibold mb-6 text-lg">Our Values</h3>
+                    <ul class="space-y-6">
+                        <li class="flex gap-x-4"><span class="text-2xl">🤝</span><div><strong>Compassion first</strong><p class="text-sm text-slate-500">Every patient treated like family</p></div></li>
+                        <li class="flex gap-x-4"><span class="text-2xl">🔬</span><div><strong>Technology-driven</strong><p class="text-sm text-slate-500">Latest equipment for precision care</p></div></li>
+                        <li class="flex gap-x-4"><span class="text-2xl">🌱</span><div><strong>Transparency</strong><p class="text-sm text-slate-500">No hidden costs. Clear treatment plans.</p></div></li>
+                    </ul>
+                </div>
+                
+                <!-- Team highlights -->
+                <h4 class="font-semibold text-slate-400 uppercase text-sm mb-4">Meet our lead dentists</h4>
+                <div class="flex gap-4">
+                    <div class="flex-1 bg-white rounded-3xl p-5 text-center">
+                        <div class="mx-auto w-16 h-16 bg-[#0284c8]/10 text-4xl rounded-2xl flex items-center justify-center mb-4">👩‍⚕️</div>
+                        <p class="font-semibold">Dr. Priya Sharma</p>
+                        <p class="text-xs text-slate-500">BDS, MDS (Prosthodontics) • 14 years</p>
+                    </div>
+                    <div class="flex-1 bg-white rounded-3xl p-5 text-center">
+                        <div class="mx-auto w-16 h-16 bg-[#0284c8]/10 text-4xl rounded-2xl flex items-center justify-center mb-4">👨‍⚕️</div>
+                        <p class="font-semibold">Dr. Arjun Mehta</p>
+                        <p class="text-xs text-slate-500">BDS, MDS (Orthodontics) • 11 years</p>
+                    </div>
+                    <div class="flex-1 bg-white rounded-3xl p-5 text-center">
+                        <div class="mx-auto w-16 h-16 bg-[#0284c8]/10 text-4xl rounded-2xl flex items-center justify-center mb-4">👩‍⚕️</div>
+                        <p class="font-semibold">Dr. Neha Kapoor</p>
+                        <p class="text-xs text-slate-500">BDS, Implantologist • 9 years</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES PAGE -->
+    <section id="services" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <span class="px-4 py-1 bg-blue-100 text-[#0284c8] text-sm font-semibold rounded-3xl">WHAT WE OFFER</span>
+            <h1 class="heading-font text-5xl font-semibold mt-4 mb-4">Comprehensive dental care for every age</h1>
+            <p class="max-w-md mx-auto text-slate-600">From routine check-ups to complex smile transformations — all under one roof.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Service 1 -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-8 card-hover">
+                <div class="flex justify-between mb-6">
+                    <div class="text-5xl">🪥</div>
+                    <div class="text-right">
+                        <span class="text-xs bg-emerald-100 text-emerald-700 px-3 py-1 rounded-3xl">PREVENTIVE</span>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-semibold mb-3">General Dentistry</h3>
+                <p class="text-slate-600 mb-6">Routine dental exams, professional cleanings, fillings, root canal therapy, and gum disease treatment.</p>
+                <button onclick="navigateToSection('contact')" class="text-[#0284c8] font-medium flex items-center text-sm">Book cleaning appointment →</button>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-8 card-hover">
+                <div class="flex justify-between mb-6">
+                    <div class="text-5xl">✨</div>
+                    <div class="text-right">
+                        <span class="text-xs bg-pink-100 text-pink-700 px-3 py-1 rounded-3xl">COSMETIC</span>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-semibold mb-3">Cosmetic Dentistry</h3>
+                <p class="text-slate-600 mb-6">Teeth whitening, porcelain veneers, composite bonding, smile design &amp; digital mock-ups.</p>
+                <button onclick="navigateToSection('contact')" class="text-[#0284c8] font-medium flex items-center text-sm">Get your free smile consultation →</button>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-8 card-hover">
+                <div class="flex justify-between mb-6">
+                    <div class="text-5xl">🔄</div>
+                    <div class="text-right">
+                        <span class="text-xs bg-purple-100 text-purple-700 px-3 py-1 rounded-3xl">ORTHODONTICS</span>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-semibold mb-3">Braces &amp; Aligners</h3>
+                <p class="text-slate-600 mb-6">Traditional braces, Invisalign®, and clear aligners for children and adults.</p>
+                <button onclick="navigateToSection('contact')" class="text-[#0284c8] font-medium flex items-center text-sm">Start your alignment journey →</button>
+            </div>
+            
+            <!-- Service 4 -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-8 card-hover">
+                <div class="flex justify-between mb-6">
+                    <div class="text-5xl">🦷</div>
+                    <div class="text-right">
+                        <span class="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-3xl">RESTORATIVE</span>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-semibold mb-3">Dental Implants &amp; Bridges</h3>
+                <p class="text-slate-600 mb-6">Replace missing teeth permanently with titanium implants and custom crowns.</p>
+                <button onclick="navigateToSection('contact')" class="text-[#0284c8] font-medium flex items-center text-sm">Book implant consultation →</button>
+            </div>
+            
+            <!-- Service 5 -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-8 card-hover">
+                <div class="flex justify-between mb-6">
+                    <div class="text-5xl">👶</div>
+                    <div class="text-right">
+                        <span class="text-xs bg-sky-100 text-sky-700 px-3 py-1 rounded-3xl">PEDIATRIC</span>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-semibold mb-3">Kids Dentistry</h3>
+                <p class="text-slate-600 mb-6">Gentle care for children including sealants, fluoride, and early orthodontic intervention.</p>
+                <button onclick="navigateToSection('contact')" class="text-[#0284c8] font-medium flex items-center text-sm">Schedule kids visit →</button>
+            </div>
+            
+            <!-- Service 6 -->
+            <div class="bg-white border border-slate-100 rounded-3xl p-8 card-hover">
+                <div class="flex justify-between mb-6">
+                    <div class="text-5xl">🩹</div>
+                    <div class="text-right">
+                        <span class="text-xs bg-red-100 text-red-700 px-3 py-1 rounded-3xl">EMERGENCY</span>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-semibold mb-3">Emergency Dental Care</h3>
+                <p class="text-slate-600 mb-6">Toothache, broken tooth, knocked-out tooth — same-day appointments available.</p>
+                <button onclick="navigateToSection('contact')" class="text-[#0284c8] font-medium flex items-center text-sm">Call now for emergency →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT PAGE -->
+    <section id="contact" class="bg-slate-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-16">
+                
+                <!-- Form -->
+                <div class="lg:col-span-7">
+                    <h1 class="heading-font text-5xl font-semibold mb-2">Let’s make your next smile appointment easy</h1>
+                    <p class="text-slate-400 mb-8">Fill out the form below and our team will confirm your slot within minutes.</p>
+                    
+                    <form id="appointment-form" onsubmit="handleSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-400 mb-1">FULL NAME</label>
+                                <input type="text" id="name" required 
+                                       class="w-full bg-white/10 border border-white/30 focus:border-white rounded-3xl px-6 py-4 text-white placeholder:text-slate-400 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-400 mb-1">PHONE NUMBER</label>
+                                <input type="tel" id="phone" required 
+                                       class="w-full bg-white/10 border border-white/30 focus:border-white rounded-3xl px-6 py-4 text-white placeholder:text-slate-400 outline-none">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-medium text-slate-400 mb-1">EMAIL ADDRESS</label>
+                            <input type="email" id="email" required 
+                                   class="w-full bg-white/10 border border-white/30 focus:border-white rounded-3xl px-6 py-4 text-white placeholder:text-slate-400 outline-none">
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-400 mb-1">PREFERRED DATE</label>
+                                <input type="date" id="date" required 
+                                       class="w-full bg-white/10 border border-white/30 focus:border-white rounded-3xl px-6 py-4 text-white outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-400 mb-1">PREFERRED TIME</label>
+                                <select id="time" required 
+                                        class="w-full bg-white/10 border border-white/30 focus:border-white rounded-3xl px-6 py-4 text-white outline-none">
+                                    <option value="">Select time</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="17:00">05:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-medium text-slate-400 mb-1">WHAT SERVICE ARE YOU INTERESTED IN?</label>
+                            <textarea id="message" rows="3" placeholder="e.g. Teeth cleaning, Invisalign consultation, Dental implant..." 
+                                      class="w-full bg-white/10 border border-white/30 focus:border-white rounded-3xl px-6 py-4 text-white placeholder:text-slate-400 outline-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full py-6 bg-[#0284c8] hover:bg-[#0369a1] text-white font-semibold text-lg rounded-3xl flex items-center justify-center gap-x-3">
+                            CONFIRM MY APPOINTMENT
+                            <span class="text-2xl">📅</span>
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact info + map -->
+                <div class="lg:col-span-5 space-y-10">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6">Visit our clinic</h3>
+                        
+                        <div class="flex items-start gap-4 mb-8">
+                            <div class="text-4xl">📍</div>
+                            <div>
+                                <p class="font-medium">Dwarka Sector 7</p>
+                                <p class="text-slate-400">New Delhi</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 mb-8">
+                            <div class="text-4xl">📞</div>
+                            <div>
+                                <p class="font-medium">+91 8105579738</p>
+                                <p class="text-emerald-400 text-sm">Available 9 AM – 8 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="text-4xl">✉️</div>
+                            <div>
+                                <p class="font-medium">hello@Naturopathy & Dental Braces Clinic.in</p>
+                                <p class="text-slate-400">We reply within 1 hour</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Fake map -->
+                    <div class="bg-slate-800 rounded-3xl p-4 h-80 flex flex-col items-center justify-center relative overflow-hidden">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">📍</div>
+                            <p class="font-medium text-xl">Naturopathy & Dental Braces Clinic</p>
+                            <p class="text-slate-400">45 Green Park, New Delhi</p>
+                            <div class="mt-6 px-8 py-3 bg-white text-slate-900 font-medium rounded-3xl inline-flex items-center text-sm">
+                                OPENING HOURS
+                                <span class="ml-8 text-emerald-500">Mon–Sat: 9am–8pm</span>
+                            </div>
+                        </div>
+                        <!-- Simple map style overlay -->
+                        <div class="absolute inset-0 bg-[radial-gradient(#0ea5e9_0.8px,#334155_0.8px)] bg-[length:
